@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Authenticity Market Exchange</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <link href="css/toastr.min.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="mb-3 mt-4 text-center">Authenticity Market Exchange</h1>
+    <div class="row">
+      <form>
+        <h3>Register</h3>
+        <div class="form-group">
+          <label for="address"> Address</label>
+          <select id="address" class="form-control"></select>
+        </div>
+        <!-- <div class="form-group">
+              <label for="your_address">Address</label>
+              <input type="text" class="form-control" id="your_address" />
+            </div> -->
+        <button type="button" id="register_your_address" class="btn btn-info">
+          Register
+        </button>
+      </form>
+    </div> <br>
+    <div class="row">
+      <div class="col-lg-3 forms">
+        <form>
+          <h3>Get Member</h3>
+          <div class="form-group">
+            <label for="address2">Member address</label>
+            <select id="address2" class="form-control"></select>
+          </div>
+          <button type="button" id="get_member" class="btn btn-info">
+            Get
+          </button>
+        </form>
+        <label id='get_member_status'> </label> <br>
+        <label id='get_items_for_sale'> </label> <br>
+        <label id='get_transaction_number'> </label>
+      </div>
+      <div class="col-lg-3 forms">
+      <form>
+        <h3>Get Item</h3>
+        <div class="form-group">
+          <label for="get_item_id">Item unique id</label>
+          <input type="number" class="form-control" id="get_item_id" placeholder="999" />
+        </div>
+        <button type="button" id="get_item" class="btn btn-info">
+          Get
+        </button> <br>
+        <label id='get_item_seller'> </label> <br>
+        <label id='get_item_name'> </label> <br>
+        <label id='get_item_price'> </label> <br>
+        <label id='authenticity'> </label>
+      </form>
+      </div>
+      <div class="col-lg-3 forms">
+      <form>
+        <h3>View Transactions</h3>
+        <div class="form-group">
+          <label for="get_item_id2">Item id</label>
+          <input type="number" class="form-control" id="get_item_id2" placeholder="999" />
+        </div>
+        <button type="button" id="view_transactions" class="btn btn-info">
+          View
+        </button>
+        <label id='last_seller'> </label> <br>
+        <label id='last_buyer'> </label> <br>
+        <label id='tracking_number'> </label> <br>
+        <label id='has_shipped'> </label> <br>
+        <label id='last_sell_price'> </label> <br>
+        <label id='price_change'> </label>
+      </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-2 forms">
+        <form>
+          <h3>List an Item</h3>
+          <div class="form-group">
+            <label for="list_item_name">Item name</label>
+            <input type="text" class="form-control" id="list_item_name" placeholder="nike sneakers" />
+          </div>
+          <div class="form-group">
+            <label for="list_item_id">Item unique id</label>
+            <input type="number" class="form-control" id="list_item_id" placeholder="999" />
+          </div>
+          <div class="form-group">
+            <label for="list_item_price">Price</label>
+            <input type="number" class="form-control" id="list_item_price" placeholder="1" />
+          </div>
+          <button type="button" id="list_item" class="btn btn-info">
+            List
+          </button>
+        </form>
+      </div>
+      <div class="col-lg-2 forms">
+        <form>
+          <h3>Buy</h3>
+          <div class="form-group">
+            <label for="buy_item_id">Item id</label>
+            <input type="text" class="form-control" id="buy_item_id" placeholder="Enter item id" />
+          </div>
+          <div class="form-group">
+            <label for="buy_item_price">Amount</label>
+            <input type="text" class="form-control" id="buy_item_price" placeholder="Enter item price" />
+          </div>
+          <button type="button" id="buy_item" class="btn btn-success">
+            Buy
+          </button>
+        </form>
+      </div>
+      <div class="col-lg-2 forms">
+        <form>
+          <h3>Validate</h3>
+          <div class="form-group">
+            <label for="validate_id">Item id</label>
+            <input type="text" class="form-control" id="validate_id" placeholder="Enter item id" />
+          </div>
+          <button type="button" id="validate" class="btn btn-success">
+            Validate
+          </button>
+        </form>
+      </div>
+      <div class="col-lg-2 forms">
+        <form>
+          <h3>Submit Tracking</h3>
+          <div class="form-group">
+            <label for="get_item_id3">Item id</label>
+            <input type="text" class="form-control" id="get_item_id3" placeholder="Enter item id" />
+          </div>
+          <div class="form-group">
+            <label for="tracking">Tracking number</label>
+            <input type="text" class="form-control" id="tracking" placeholder="1234567890" />
+          </div>
+          <button type="button" id="submit_tracking" class="btn btn-success">
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .container {
+      margin-left: 5%;
+      margin-right: 5%;
+      margin-bottom: 5%;
+      padding-left: 0;
+      padding-right: 0;
+      max-width: -webkit-fill-available;
+    }
+
+    .forms {
+      margin-right: 3%;
+      /* border-right: 1px solid #bebebe; */
+    }
+  </style>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- <script src="js/dist/toastr.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.37/dist/web3.min.js"></script> -->
+<script src="js/dist/bootstrap.min.js"></script>
+<script src="js/dist/web3.min.js"></script>
+<script src="js/dist/truffle-contract.js"></script>
+<script src="js/app.js"></script>
+
+</html>
